@@ -1,9 +1,10 @@
 pipeline {
-    agent {
-        docker { image 'nginx' }
-    }
+    agent none
     stages {
         stage('Test') {
+            agent {
+                docker { image 'nginx' }
+            }
             steps {
                 echo 'nginx --version'
             }
